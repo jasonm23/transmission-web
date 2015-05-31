@@ -383,29 +383,40 @@ Transmission.prototype =
   {
     var handled = false,
         rows = this._rows,
-        up         = ev.keyCode === 38, // up key pressed
-        dn         = ev.keyCode === 40, // down key pressed
-        shift      = ev.keyCode === 16; // shift key pressed
+        up         = ev.keyCode === 38,
+        dn         = ev.keyCode === 40,
+        shift      = ev.keyCode === 16;
 
-    var a_key      = ev.keyCode === 65, // A: Select All
-        c_key      = ev.keyCode === 67, // C: Compact View Toggle
-        d_key      = ev.keyCode === 68, // D: Remove from list
-        i_key      = ev.keyCode === 73, // I: Info Panel Toggle
-        l_key      = ev.keyCode === 76, // L: Set Location
-        m_key      = ev.keyCode === 77, // M: Set Location (move)
-        o_key      = ev.keyCode === 79, // O: Open Torrent or URL
-        p_key      = ev.keyCode === 80, // P: Pause/Stop Torrent
-        r_key      = ev.keyCode === 82, // R: Resume/Start Torrent
-        s_key      = ev.keyCode === 83, // S: Stop/Pause Torrent
-        t_key      = ev.keyCode === 84, // T: Turtle Mode Toggle
-        v_key      = ev.keyCode === 86, // V: Verify Data
-        forward_sl = ev.keyCode === 191, // /: Help Panel
+    var a_key      = ev.keyCode === 65,
+        c_key      = ev.keyCode === 67,
+        d_key      = ev.keyCode === 68,
+        i_key      = ev.keyCode === 73,
+        l_key      = ev.keyCode === 76,
+        m_key      = ev.keyCode === 77,
+        o_key      = ev.keyCode === 79,
+        p_key      = ev.keyCode === 80,
+        r_key      = ev.keyCode === 82,
+        s_key      = ev.keyCode === 83,
+        t_key      = ev.keyCode === 84,
+        v_key      = ev.keyCode === 86,
+        forward_sl = ev.keyCode === 191,
         space_bar  = ev.keyCode === 32,
-        enter_key  = ev.keyCode === 13,  // Enter: Confirm Dialog
-        esc_key    = ev.keyCode === 27,  // Esc: Cancel Dialog
-        comma_key  = ev.keyCode === 188, // Comma: Preferences
-        back_space = ev.keyCode === 8,   // Backspace: Remove from list
-        del_key    = ev.keyCode === 46;  // Del: Remove from list
+        enter_key  = ev.keyCode === 13,
+        esc_key    = ev.keyCode === 27,
+        comma_key  = ev.keyCode === 188,
+        back_space = ev.keyCode === 8,
+        del_key    = ev.keyCode === 46;
+
+    if ($('#keyboard-shortcuts-dialog').is(':visible'))
+    {
+      console.log("Hello there");
+      if (forward_sl)
+      {
+        console.log("Hello again");
+        dialog.hideDialog();
+        handled = true;
+      }
+    }
 
     if ($('.dialog_heading:visible').length == 0)
     {
