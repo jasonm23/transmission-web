@@ -409,12 +409,10 @@ Transmission.prototype =
 
     if ($('#keyboard-shortcuts-dialog').is(':visible'))
     {
-      console.log("Hello there");
-      if (forward_sl)
-      {
-        console.log("Hello again");
-        dialog.hideDialog();
+      if(forward_sl) {
+        $('.ui-dialog-titlebar-close').click()
         handled = true;
+        forward_sl = false;
       }
     }
 
