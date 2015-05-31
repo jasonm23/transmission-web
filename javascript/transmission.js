@@ -422,6 +422,7 @@ Transmission.prototype =
       if (forward_sl)
       {
         $('#keyboard-shortcuts-dialog').dialog({
+          width: 470,
           title: 'Keyboard Shortcuts',
           show: 'fade',
           hide: 'fade'
